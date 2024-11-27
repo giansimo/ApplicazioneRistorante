@@ -1,19 +1,9 @@
 //Classe che contiene le istanze delle portate del menù
 public class Menu {
 
+    //Aggiungere qui gli altri attributi di questa classe per ciascuna portata
+
     //Massimo 10 piatti per portata (Non conosciamo ancora gli array dinamici)
-
-    private Dessert[] bevandeMenu = new Dessert[10];
-    private int numberOfBevande;
-
-    private Dessert[] antipastiMenu = new Dessert[10];
-    private int numberOfAntipasti;
-
-    private Dessert[] primiMenu = new Dessert[10];
-    private int numberOfPrimi;
-
-    private Dessert[] secondiMenu = new Dessert[10];
-    private int numberOfSecondi;
 
     private Dessert[] dessertMenu = new Dessert[10];
     private int numberOfDessert;
