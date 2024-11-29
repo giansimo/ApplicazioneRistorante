@@ -5,6 +5,25 @@ public class Main {
         //Istanziamento del Menù
         Menu menu = new Menu();
 
+        //Aggiunta di Primi nel Menù
+        menu.addPrimi(new Primi("Risotto al Tartufo Nero con Fonduta di Parmigiano Reggiano",
+                "Un risotto cremoso preparato con brodo vegetale,"+
+                        "arricchito dal profumo inconfondibile del tartufo nero e completato con una fonduta di Parmigiano Reggiano."+
+                        "Il contrasto tra la ricchezza del formaggio e l'aroma terroso del tartufo crea un piatto sofisticato e avvolgente.",
+                13,
+                new String[] {
+                         "Riso Carnaroli",
+                         "Brodo vegetale",
+                         "tartufo nero fresco",
+                         "Parmigiano Reggiano",
+                         "burro",
+                         "vino bianco",
+                         "cipolla."},
+
+                "Cottura Passiva, Cottura Espressa, Doppia Cottura, Cottura Risottata"
+
+                ));
+
         //Aggiunta di dessert nel Menù
         menu.addDessert(new Dessert("Tiramisù",
                 "Un classico dessert italiano, cremoso e ricco di sapori. " +
