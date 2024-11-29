@@ -46,12 +46,15 @@ public class Antipasti {
 
     // Funzione che restituisce una stringa contenente l'elenco degli ingredienti dell'istanza
     private String elencoIngredienti() {
-        String list = "";
-        for (int i = 0; i < ingredienti.length - 1; i++) {
-            list += ingredienti[i] + ", ";
+        if (ingredienti == null || ingredienti.length == 0) {
+            return "Nessun ingrediente specificato";
         }
-        list += ingredienti[ingredienti.length - 1];
-        return list;
+        StringBuilder list = new StringBuilder();
+        for (int i = 0; i < ingredienti.length - 1; i++) {
+            list.append(ingredienti[i]).append(", ");
+        }
+        list.append(ingredienti[ingredienti.length - 1]);
+        return list.toString();
     }
 
     @Override

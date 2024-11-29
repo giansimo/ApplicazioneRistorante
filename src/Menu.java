@@ -3,21 +3,12 @@ public class Menu {
 
     //Massimo 10 piatti per portata (Non conosciamo ancora gli array dinamici)
 
-    private Dessert[] bevandeMenu = new Dessert[10];
-    private int numberOfBevande;
-
-    private Dessert[] antipastiMenu = new Dessert[10];
-    private int numberOfAntipasti;
-
-    private Dessert[] primiMenu = new Dessert[10];
-    private int numberOfPrimi;
-
-    private Dessert[] secondiMenu = new Dessert[10];
-    private int numberOfSecondi;
 
     private Dessert[] dessertMenu = new Dessert[10];
     private int numberOfDessert;
 
+    private Antipasti[] antipastiMenu = new Antipasti[10];
+    private int numberOfAntipasti;
     //Funzione che aggiunge portate al menù dei dessert
     public void addDessert(Dessert dessert) {
         if (numberOfDessert < 10) {
@@ -25,6 +16,15 @@ public class Menu {
             numberOfDessert++;
         } else {
             System.out.println("Errore: numero massimo di dessert raggiunto!");
+        }
+    }
+
+    public void addAntipasti(Antipasti antipasti) {
+        if (numberOfAntipasti < 10) {
+            antipastiMenu[numberOfAntipasti] = antipasti;
+            numberOfAntipasti++;
+        } else {
+            System.out.println("Errore: numero massimo di antipasti raggiunto!");
         }
     }
 
@@ -44,10 +44,25 @@ public class Menu {
         return dessertMenu;
     }
 
+
+    private String getAntipastiMenu() {
+
+        if (numberOfAntipasti == 0) {
+            return "";
+        }
+
+        String antipasti = "\nAntipasti -----\n\n";
+        for (int i = 0; i < numberOfAntipasti; i++) {
+            antipasti += this.antipastiMenu[i] + "\n\n-------------\n\n";
+        }
+        return antipasti;
+    }
+
     @Override
     public String toString() {
         return "\n-------------- MENÙ --------------\n\n" +
-                getDessertMenu();
+                getDessertMenu() +
+                getAntipastiMenu();
 
         //Aggiungere nel return le stringhe con i menù delle altre portate
         //(ad esempio getAntipastiMenu())

@@ -50,6 +50,13 @@ public class Main {
                         "Vaniglia"
                 }));
 
+        menu.addAntipasti(new Antipasti(
+                "Bruschetta al pomodoro",
+                "Pane tostato condito con pomodori freschi, olio d'oliva e basilico.",
+                5.50,
+                new String[]{"Pane", "Pomodori", "Olio d'oliva", "Basilico", "Aglio"}
+        ));
+
         //Stampa del Menù
         System.out.println(menu);
     }
