@@ -55,6 +55,25 @@ public class Main {
                         "erbe aromatiche (come rosmarino o timo)"},
                 "media"));
 
+        //Aggiunta di Primi nel Menù
+        menu.addPrimi(new Primi("Risotto al Tartufo Nero con Fonduta di Parmigiano Reggiano",
+                "Un risotto cremoso preparato con brodo vegetale,"+
+                        "arricchito dal profumo inconfondibile del tartufo nero e completato con una fonduta di Parmigiano Reggiano."+
+                        "Il contrasto tra la ricchezza del formaggio e l'aroma terroso del tartufo crea un piatto sofisticato e avvolgente.",
+                13,
+                new String[] {
+                         "Riso Carnaroli",
+                         "Brodo vegetale",
+                         "tartufo nero fresco",
+                         "Parmigiano Reggiano",
+                         "burro",
+                         "vino bianco",
+                         "cipolla."},
+
+                "Cottura Passiva, Cottura Espressa, Doppia Cottura, Cottura Risottata"
+
+                ));
+
         //Aggiunta di dessert nel Menù
         menu.addDessert(new Dessert("Tiramisù",
                 "Un classico dessert italiano, cremoso e ricco di sapori. " +
@@ -99,6 +118,19 @@ public class Main {
                         "Zucchero",
                         "Vaniglia"
                 }));
+
+ 
+        menu.addAntipasti(new Antipasti(
+                "Bruschetta al pomodoro",
+                "Pane tostato condito con pomodori freschi, olio d'oliva e basilico.",
+                5.50,
+                new String[]{"Pane", "Pomodori", "Olio d'oliva", "Basilico", "Aglio"}
+        ));
+
+        menu.addBevande(new Bevande("Birra", "bevanda alcolica", 3.5, new String[]{"acqua" , "luppolo", "malto"}));
+        menu.addBevande(new Bevande("Coca Cola", "bevanda analcolica", 2.5, new String[]{"acqua" , "zucchero"}));
+        menu.addBevande(new Bevande("Acqua", "bevanda analcolica", 1.5, new String[]{"acqua"}));
+
 
         //Stampa del Menù
         System.out.println(menu);
