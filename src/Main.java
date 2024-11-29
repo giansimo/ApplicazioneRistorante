@@ -4,6 +4,56 @@ public class Main {
 
         //Istanziamento del Menù
         Menu menu = new Menu();
+        //aggiunta dei secondi
+        menu.addSecondi(new Secondi("Bistecca di Manzo alla Griglia",
+                """
+                   Una succulenta bistecca di manzo, cotta alla perfezione sulla griglia.
+                   La carne è tenera, saporita e leggermente croccante all’esterno,
+                   mantenendo tutta la sua morbidezza all’interno.""",
+                18.0,
+                new String[] {"preferibilmente taglio come fiorentina, controfiletto o entrecôte)",
+                        "olio extravergine di oliva"," sale", "pepe nero", "rosmarino (opzionale)"},
+                "media"));
+        menu.addSecondi(new Secondi ("Bistecca di Vitello alla Piastra",
+                        """
+                            Una bistecca di vitello tenera e delicata, cotta sulla piastra per esaltare il sapore naturale della carne.
+                            Spesso servita con un filo d'olio d'oliva e una spolverata di sale e pepe""",
+                        15.50,
+                        new String[] {
+                                "Bistecca di vitello", "olio extravergine di oliva","sale","pepe nero",
+                                "rosmarino (opzionale)","limone (opzionale)"},
+                        "media"));
+
+        menu.addSecondi(new Secondi ("Arrosticini di Pecora",
+                """
+                    Piccole spiedini di carne di pecora, tipici della cucina abruzzese, cotti sulla brace.
+                   La carne è saporita e leggermente grigliata all’esterno, mantenendo la sua morbidezza all’interno.""",
+                10.00,
+                new String[] {"Carne di pecora tagliata a cubetti", "sale", "pepe", "olio d’oliva", "rosmarino (opzionale)"},
+                "media"));
+        menu.addSecondi(new Secondi ("Arrosticini di Fegato",
+                """
+                    Spiedini di fegato di vitello o agnello, cucinati sulla griglia. Un piatto tradizionale e rustico,
+                    dal sapore intenso e caratteristico, perfetto per chi ama i piatti di frattaglie..""",
+                12.0,
+                new String []{"Fegato di agnello o vitello", "sale", "pepe", "rosmarino", "olio d’oliva"},
+                "media"));
+        menu.addSecondi(new Secondi ("Arrosto di Manzo con Patate",
+                """
+                Un arrosto di manzo cotto lentamente in forno con patate, che assorbono i succhi della carne,
+                diventando croccanti e saporite. Un piatto completo e rustico, ideale per una cena sostanziosa.""",
+                18.0,
+                new String[] {"Carne di manzo (spalla o punta di petto)", "patate", "olio extravergine d’oliva",
+                        "sale", "pepe", "rosmarino", "aglio (opzionale)"},
+                "media"));
+        menu.addSecondi(new Secondi ("Salcicce alla Griglia",
+                """
+                        Salcicce fresche di maiale, manzo o pollo, cotte sulla griglia o in padella fino a dorarsi.
+                        Un piatto semplice e gustoso, molto apprezzato nelle grigliate all'aperto.""",
+                8.0,
+                new String[] {"Carne di maiale o pollo", "pepe nero", "sale", "aglio", "vino bianco (opzionale)",
+                        "erbe aromatiche (come rosmarino o timo)"},
+                "media"));
 
         //Aggiunta di Primi nel Menù
         menu.addPrimi(new Primi("Risotto al Tartufo Nero con Fonduta di Parmigiano Reggiano",

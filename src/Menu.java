@@ -3,9 +3,15 @@ public class Menu {
 
 
 
+    //Aggiungere qui gli altri attributi di questa classe per ciascuna portata
+
+
+
     private Dessert[] dessertMenu = new Dessert[10];
     private int numberOfDessert;
 
+    private Secondi[] listaSecondi = new Secondi[10];
+    private int numeroOfSecond;
 
     private Antipasti[] antipastiMenu = new Antipasti[10];
     private int numberOfAntipasti;
@@ -15,6 +21,7 @@ public class Menu {
 
     private Primi[] primiMenu = new Primi[10];
     private int numberOfPrimi;
+
 
     //Funzione che aggiunge portate al menù dei dessert
     public void addDessert(Dessert dessert) {
@@ -27,6 +34,16 @@ public class Menu {
     }
 
 
+    //Funzione che aggiunce i secondi piatti al menu
+    public void addSecondi(Secondi singoloSecondi) {
+        if (numeroOfSecond < 10) {
+            listaSecondi[numeroOfSecond] = singoloSecondi;
+            numeroOfSecond++;
+        } else {
+            System.out.println("Errore: numero massimo di Secondi raggiunto!");
+        }
+    }
+    //Funzione che aggiunge portate al menù degli antipasti
     public void addAntipasti(Antipasti antipasti) {
         if (numberOfAntipasti < 10) {
             antipastiMenu[numberOfAntipasti] = antipasti;
@@ -36,6 +53,7 @@ public class Menu {
 
         }
     }
+  
     //Funzione che aggiunge portate al menù delle bevande
     public void addBevande(Bevande bevanda) {
         if (numberOfBevande < 10) {
@@ -72,6 +90,19 @@ public class Menu {
         }
         return dessertMenu;
     }
+
+
+    public String getSecondMenu (){
+        if (numeroOfSecond == 0) {
+            return "";
+        }
+        String secondiMenu = "\nSECONDI -----\n\n";
+        for (int i = 0; i < numeroOfSecond; i++) {
+            secondiMenu += this.listaSecondi[i] + "\n\n-------------\n\n";
+        }
+        return secondiMenu;
+    }
+
 
 
 
@@ -121,13 +152,16 @@ public class Menu {
     }
 
 
+
     @Override
     public String toString() {
         return "\n-------------- MENÙ --------------\n\n" +
-                getDessertMenu() +
+                getAntipastiMenu() + 
                 getPrimiMenu() +
-                getAntipastiMenu() +
+                getSecondMenu() +
+                getDessertMenu() +
                 getBevandeMenu();
+
 
         //Aggiungere nel return le stringhe con i menù delle altre portate
         //(ad esempio getAntipastiMenu())
