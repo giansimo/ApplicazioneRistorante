@@ -50,12 +50,18 @@ public class Main {
                         "Vaniglia"
                 }));
 
+ 
         menu.addAntipasti(new Antipasti(
                 "Bruschetta al pomodoro",
                 "Pane tostato condito con pomodori freschi, olio d'oliva e basilico.",
                 5.50,
                 new String[]{"Pane", "Pomodori", "Olio d'oliva", "Basilico", "Aglio"}
         ));
+
+        menu.addBevande(new Bevande("Birra", "bevanda alcolica", 3.5, new String[]{"acqua" , "luppolo", "malto"}));
+        menu.addBevande(new Bevande("Coca Cola", "bevanda analcolica", 2.5, new String[]{"acqua" , "zucchero"}));
+        menu.addBevande(new Bevande("Acqua", "bevanda analcolica", 1.5, new String[]{"acqua"}));
+
 
         //Stampa del Menù
         System.out.println(menu);

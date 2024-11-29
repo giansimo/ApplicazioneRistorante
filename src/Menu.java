@@ -1,14 +1,19 @@
 //Classe che contiene le istanze delle portate del menù
 public class Menu {
 
-    //Massimo 10 piatti per portata (Non conosciamo ancora gli array dinamici)
 
 
     private Dessert[] dessertMenu = new Dessert[10];
     private int numberOfDessert;
 
+
     private Antipasti[] antipastiMenu = new Antipasti[10];
     private int numberOfAntipasti;
+
+    private Bevande[] bevandeMenu = new Bevande[10];
+    private int numberOfBevande;
+
+
     //Funzione che aggiunge portate al menù dei dessert
     public void addDessert(Dessert dessert) {
         if (numberOfDessert < 10) {
@@ -19,12 +24,24 @@ public class Menu {
         }
     }
 
+
     public void addAntipasti(Antipasti antipasti) {
         if (numberOfAntipasti < 10) {
             antipastiMenu[numberOfAntipasti] = antipasti;
             numberOfAntipasti++;
         } else {
             System.out.println("Errore: numero massimo di antipasti raggiunto!");
+
+        }
+    }
+    //Funzione che aggiunge portate al menù delle bevande
+    public void addBevande(Bevande bevanda) {
+        if (numberOfBevande < 10) {
+            bevandeMenu[numberOfBevande] = bevanda;
+            numberOfBevande++;
+        } else {
+            System.out.println("Errore: numero massimo di bevande raggiunto!");
+
         }
     }
 
@@ -45,6 +62,7 @@ public class Menu {
     }
 
 
+
     private String getAntipastiMenu() {
 
         if (numberOfAntipasti == 0) {
@@ -57,12 +75,31 @@ public class Menu {
         }
         return antipasti;
     }
+  
+  
+    private String getBevandeMenu() {
+
+        if (numberOfBevande == 0) {
+            return "";
+        }
+      
+      
+
+        String bevandeMenu = "\nBEVANDE -----\n\n";
+        for (int i = 0; i < numberOfBevande; i++) {
+            bevandeMenu += this.bevandeMenu[i] + "\n\n-------------\n\n";
+
+        }
+        return bevandeMenu;
+    }
+  
 
     @Override
     public String toString() {
         return "\n-------------- MENÙ --------------\n\n" +
                 getDessertMenu() +
-                getAntipastiMenu();
+                getAntipastiMenu() +
+                getBevandeMenu();
 
         //Aggiungere nel return le stringhe con i menù delle altre portate
         //(ad esempio getAntipastiMenu())
