@@ -8,6 +8,9 @@ public class Menu {
     private Dessert[] dessertMenu = new Dessert[10];
     private int numberOfDessert;
 
+    private Bevande[] bevandeMenu = new Bevande[10];
+    private int numberOfBevande;
+
     //Funzione che aggiunge portate al menù dei dessert
     public void addDessert(Dessert dessert) {
         if (numberOfDessert < 10) {
@@ -15,6 +18,16 @@ public class Menu {
             numberOfDessert++;
         } else {
             System.out.println("Errore: numero massimo di dessert raggiunto!");
+        }
+    }
+
+    //Funzione che aggiunge portate al menù delle bevande
+    public void addBevande(Bevande bevanda) {
+        if (numberOfBevande < 10) {
+            bevandeMenu[numberOfBevande] = bevanda;
+            numberOfBevande++;
+        } else {
+            System.out.println("Errore: numero massimo di bevande raggiunto!");
         }
     }
 
@@ -34,10 +47,24 @@ public class Menu {
         return dessertMenu;
     }
 
+    private String getBevandeMenu() {
+
+        if (numberOfBevande == 0) {
+            return "";
+        }
+
+        String bevandeMenu = "\nBEVANDE -----\n\n";
+        for (int i = 0; i < numberOfBevande; i++) {
+            bevandeMenu += this.bevandeMenu[i] + "\n\n-------------\n\n";
+
+        }
+        return bevandeMenu;
+    }
+
     @Override
     public String toString() {
         return "\n-------------- MENÙ --------------\n\n" +
-                getDessertMenu();
+                getDessertMenu() + getBevandeMenu();
 
         //Aggiungere nel return le stringhe con i menù delle altre portate
         //(ad esempio getAntipastiMenu())
