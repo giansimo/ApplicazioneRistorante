@@ -1,12 +1,17 @@
 //Classe che contiene le istanze delle portate del menù
 public class Menu {
 
+
     //Aggiungere qui gli altri attributi di questa classe per ciascuna portata
 
     //Massimo 10 piatti per portata (Non conosciamo ancora gli array dinamici)
 
     private Dessert[] dessertMenu = new Dessert[10];
     private int numberOfDessert;
+
+    private Secondi[] listaSecondi = new Secondi[10];
+    private int numeroOfSecond;
+
 
     //Funzione che aggiunge portate al menù dei dessert
     public void addDessert(Dessert dessert) {
@@ -17,6 +22,19 @@ public class Menu {
             System.out.println("Errore: numero massimo di dessert raggiunto!");
         }
     }
+
+    //Funzione che aggiunce i secondi piatti al menu
+    public void addSecondi(Secondi singoloSecondi) {
+        if (numeroOfSecond < 10) {
+            listaSecondi[numeroOfSecond] = singoloSecondi;
+            numeroOfSecond++;
+        } else {
+            System.out.println("Errore: numero massimo di Secondi raggiunto!");
+        }
+    }
+
+
+
 
     //Aggiungere qui le funzioni per le altre portate (opzionale)
 
@@ -34,10 +52,24 @@ public class Menu {
         return dessertMenu;
     }
 
+    public String getSecondMenu (){
+        if (numeroOfSecond == 0) {
+            return "";
+        }
+        String secondiMenu = "\nSECONDI -----\n\n";
+        for (int i = 0; i < numeroOfSecond; i++) {
+            secondiMenu += this.listaSecondi[i] + "\n\n-------------\n\n";
+        }
+        return secondiMenu;
+    }
+
+
+
     @Override
     public String toString() {
         return "\n-------------- MENÙ --------------\n\n" +
-                getDessertMenu();
+                getDessertMenu()+
+                getSecondMenu();
 
         //Aggiungere nel return le stringhe con i menù delle altre portate
         //(ad esempio getAntipastiMenu())
