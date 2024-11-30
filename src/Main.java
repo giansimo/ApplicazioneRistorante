@@ -1,4 +1,3 @@
-
 public class Main {
     public static void main(String[] args) {
 
@@ -90,7 +89,8 @@ public class Main {
                         "Caffé espresso",
                         "Cacao amaro",
                         "Liquore Marsala"
-                }));
+                },
+                Temperatura.FREDDO));
         menu.addDessert(new Dessert("Soufflé al cioccolato",
                 """
                         Un dessert caldo e voluttuoso, il soufflé al cioccolato è una delle preparazioni
@@ -106,7 +106,8 @@ public class Main {
                         "Farina",
                         "Panna",
                         "Vaniglia"
-                }));
+                },
+                Temperatura.CALDO));
 
         menu.addDessert(new Dessert("Crème Brulée",
                 """
@@ -120,7 +121,8 @@ public class Main {
                         "Uova",
                         "Zucchero",
                         "Vaniglia"
-                }));
+                },
+                Temperatura.CALDO));
 
  
         menu.addAntipasti(new Antipasti(
