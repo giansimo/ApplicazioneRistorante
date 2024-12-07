@@ -4,14 +4,14 @@ public class Secondi extends Portata{
     private String categoriaAlimentazione;
 
     public Secondi (String nome,String descrizione,double prezzo,String[] ingredienti ,String cottura,String categoriaAlimentazione){
-        super(nome, descrizione, prezzo, ingredienti);
+        super(TipologiaPortata.SECONDI, nome, descrizione, prezzo, ingredienti);
         this.cottura = cottura;
         this.categoriaAlimentazione = categoriaAlimentazione;
 
     }
 
     public Secondi (String nome,String descrizione,double prezzo,String[] ingredienti ,String cottura){
-        super(nome, descrizione,prezzo,ingredienti);
+        super(TipologiaPortata.SECONDI, nome, descrizione,prezzo,ingredienti);
         this.cottura = cottura;
         this.categoriaAlimentazione = "Nessuna Categoria";
 

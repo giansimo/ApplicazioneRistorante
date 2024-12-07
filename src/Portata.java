@@ -1,16 +1,22 @@
 public abstract class Portata {
 
+    private TipologiaPortata tipologiaPortata;
     private String nome, descrizione;
     private double prezzo;
     private String[] ingredienti;
 
     public Portata() {}
 
-    public Portata(String nome, String descrizione, double prezzo, String[] ingredienti) {
+    public Portata(TipologiaPortata tipologiaPortata, String nome, String descrizione, double prezzo, String[] ingredienti) {
+        this.tipologiaPortata = tipologiaPortata;
         this.nome = nome;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
         this.ingredienti = ingredienti;
+    }
+
+    public TipologiaPortata getTipologiaPortata() {
+        return tipologiaPortata;
     }
 
     protected String getNome() {

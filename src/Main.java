@@ -2,8 +2,9 @@ public class Main {
     public static void main(String[] args) {
 
         //Istanziamento del Menù
-        Menu menu = new Menu();
-        //aggiunta dei secondi
+        Menu menu = new Menu(50);
+
+        //Aggiunta dei secondi
         menu.addPortata(new Secondi("Bistecca di Manzo alla Griglia",
                 """
                    Una succulenta bistecca di manzo, cotta alla perfezione sulla griglia.
@@ -55,7 +56,7 @@ public class Main {
                 "media"));
 
         //Aggiunta di Primi nel Menù
-        menu.addPrimi(new Primi("Risotto al Tartufo Nero con Fonduta di Parmigiano Reggiano",
+        menu.addPortata(new Primi("Risotto al Tartufo Nero con Fonduta di Parmigiano Reggiano",
                 "Un risotto cremoso preparato con brodo vegetale,"+
                         "arricchito dal profumo inconfondibile del tartufo nero e completato con una fonduta di Parmigiano Reggiano."+
                         "Il contrasto tra la ricchezza del formaggio e l'aroma terroso del tartufo crea un piatto sofisticato e avvolgente.",
@@ -74,7 +75,7 @@ public class Main {
                 ));
 
         //Aggiunta di dessert nel Menù
-        menu.addDessert(new Dessert("Tiramisù",
+        menu.addPortata(new Dessert("Tiramisù",
                 """
                         Un classico dessert italiano, cremoso e ricco di sapori.
                         Composto da strati di savoiardi imbevuti nel caffè e ricoperti con una soffice crema al mascarpone,
@@ -91,7 +92,7 @@ public class Main {
                         "Liquore Marsala"
                 },
                 Temperatura.FREDDO));
-        menu.addDessert(new Dessert("Soufflé al cioccolato",
+        menu.addPortata(new Dessert("Soufflé al cioccolato",
                 """
                         Un dessert caldo e voluttuoso, il soufflé al cioccolato è una delle preparazioni
                         più amate dai golosi. Il suo cuore morbido e fondente si scioglie in bocca,
@@ -109,7 +110,7 @@ public class Main {
                 },
                 Temperatura.CALDO));
 
-        menu.addDessert(new Dessert("Crème Brulée",
+        menu.addPortata(new Dessert("Crème Brulée",
                 """
                         Un dolce francese sofisticato e irresistibile, con una crema vellutata
                         alla vaniglia e una crosta di zucchero caramellato croccante. La crema viene cotta
