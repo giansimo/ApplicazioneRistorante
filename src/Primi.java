@@ -5,7 +5,7 @@ public class Primi extends Portata{
 
     //Costruttore
     public Primi(String nome, String descrizione, int prezzo, String[] ingredienti, String tipoDiCottura){
-        super(nome, descrizione, prezzo, ingredienti);
+        super(TipologiaPortata.PRIMI, nome, descrizione, prezzo, ingredienti);
         this.tipoDiCottura = tipoDiCottura;
     }
 

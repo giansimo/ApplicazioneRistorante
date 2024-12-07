@@ -1,30 +1,22 @@
 //Classe che contiene le istanze delle portate del menù
 public class Menu {
 
-
-
-    //Aggiungere qui gli altri attributi di questa classe per ciascuna portata
-
-
-    private Portata[] portate = new Portata[50];
+    private Portata[] portate;
     private int numberOfPortate;
 
-    private Dessert[] dessertMenu = new Dessert[10];
-    private int numberOfDessert;
+    public Menu(int capacità) {
+        this.portate = new Portata[capacità];
+    }
 
-    private Secondi[] listaSecondi = new Secondi[10];
-    private int numeroOfSecond;
-
+    //Da eliminare
     private Antipasti[] antipastiMenu = new Antipasti[10];
     private int numberOfAntipasti;
 
+    //Da eliminare
     private Bevande[] bevandeMenu = new Bevande[10];
     private int numberOfBevande;
 
-    private Primi[] primiMenu = new Primi[10];
-    private int numberOfPrimi;
-
-
+    //Funzione che aggiunge portate all'array delle portate
     public void addPortata(Portata portata){
         if(numberOfPortate < 50){
             portate[numberOfPortate] = portata;
@@ -34,27 +26,7 @@ public class Menu {
         }
     }
 
-    //Funzione che aggiunge portate al menù dei dessert
-    public void addDessert(Dessert dessert) {
-        if (numberOfDessert < 10) {
-            dessertMenu[numberOfDessert] = dessert;
-            numberOfDessert++;
-        } else {
-            System.out.println("Errore: numero massimo di dessert raggiunto!");
-        }
-    }
-
-
-    //Funzione che aggiunce i secondi piatti al menu
-    public void addSecondi(Secondi singoloSecondi) {
-        if (numeroOfSecond < 10) {
-            listaSecondi[numeroOfSecond] = singoloSecondi;
-            numeroOfSecond++;
-        } else {
-            System.out.println("Errore: numero massimo di Secondi raggiunto!");
-        }
-    }
-    //Funzione che aggiunge portate al menù degli antipasti
+    //Da eliminare
     public void addAntipasti(Antipasti antipasti) {
         if (numberOfAntipasti < 10) {
             antipastiMenu[numberOfAntipasti] = antipasti;
@@ -65,7 +37,7 @@ public class Menu {
         }
     }
   
-    //Funzione che aggiunge portate al menù delle bevande
+    //Da eliminare
     public void addBevande(Bevande bevanda) {
         if (numberOfBevande < 10) {
             bevandeMenu[numberOfBevande] = bevanda;
@@ -76,106 +48,50 @@ public class Menu {
         }
     }
 
-    //Funzione che aggiunge portate al menù delle primi
-    public void addPrimi(Primi primi) {
-        if (numberOfPrimi < 10) {
-            primiMenu[numberOfPrimi] = primi;
-            numberOfPrimi++;
-        } else {
-            System.out.println("Errore: numero massimo di primi raggiunto!");
-        }
-    }
-
-    //Aggiungere qui le funzioni per le altre portate (opzionale)
-
-    //Funzione ausiliaria che restituisce il menù dei dessert
-    private String getDessertMenu() {
-
-        if (numberOfDessert == 0) {
-            return "";
-        }
-
-        String dessertMenu = "\nDESSERT -----\n\n";
-        for (int i = 0; i < numberOfDessert; i++) {
-            dessertMenu += this.dessertMenu[i] + "\n\n-------------\n\n";
-        }
-        return dessertMenu;
-    }
-
-
-    public String getSecondMenu (){
-        if (numeroOfSecond == 0) {
-            return "";
-        }
-        String secondiMenu = "\nSECONDI -----\n\n";
-        for (int i = 0; i < numeroOfSecond; i++) {
-            secondiMenu += this.listaSecondi[i] + "\n\n-------------\n\n";
-        }
-        return secondiMenu;
-    }
-
-
-
-
-    private String getAntipastiMenu() {
-
-        if (numberOfAntipasti == 0) {
-            return "";
-        }
-
-        String antipasti = "\nAntipasti -----\n\n";
-        for (int i = 0; i < numberOfAntipasti; i++) {
-            antipasti += this.antipastiMenu[i] + "\n\n-------------\n\n";
-        }
-        return antipasti;
-    }
-  
-  
-    private String getBevandeMenu() {
-
-        if (numberOfBevande == 0) {
-            return "";
-        }
-      
-      
-
-        String bevandeMenu = "\nBEVANDE -----\n\n";
-        for (int i = 0; i < numberOfBevande; i++) {
-            bevandeMenu += this.bevandeMenu[i] + "\n\n-------------\n\n";
-
-        }
-        return bevandeMenu;
-    }
-  
-
-    private String getPrimiMenu() {
-
-        if (numberOfPrimi == 0) {
-            return "";
-        }
-
-        String primiMenu = "\nPRIMI -----\n\n";
-        for (int i = 0; i < numberOfPrimi; i++) {
-            primiMenu += this.primiMenu[i] + "\n\n-------------\n\n";
-
-        }
-        return primiMenu;
-    }
-
-
-
     @Override
     public String toString() {
-        return "\n-------------- MENÙ --------------\n\n" +
-                getAntipastiMenu() + 
-                getPrimiMenu() +
-                getSecondMenu() +
-                getDessertMenu() +
-                getBevandeMenu();
 
+        if (numberOfPortate == 0) {
+            return "Il menù è vuoto";
+        }
 
-        //Aggiungere nel return le stringhe con i menù delle altre portate
-        //(ad esempio getAntipastiMenu())
+        StringBuilder antipastiMenu = new StringBuilder("\n")
+                .append(TipologiaPortata.ANTIPASTI.getTipologia().toUpperCase())
+                .append(" -----\n\n");
 
+        StringBuilder primiMenu = new StringBuilder("\n")
+                .append(TipologiaPortata.PRIMI.getTipologia().toUpperCase())
+                .append(" -----\n\n");
+
+        StringBuilder secondiMenu = new StringBuilder("\n")
+                .append(TipologiaPortata.SECONDI.getTipologia().toUpperCase())
+                .append(" -----\n\n");
+
+        StringBuilder dessertMenu = new StringBuilder("\n")
+                .append(TipologiaPortata.DESSERT.getTipologia().toUpperCase())
+                .append(" -----\n\n");
+
+        StringBuilder bevandeMenu = new StringBuilder("\n")
+                .append(TipologiaPortata.BEVANDE.getTipologia().toUpperCase())
+                .append(" -----\n\n");
+
+        for (int i = 0; i < numberOfPortate; i++) {
+            switch (portate[i].getTipologiaPortata()) {
+                case ANTIPASTI -> antipastiMenu.append(portate[i]).append("\n\n-------------\n\n");
+                case PRIMI -> primiMenu.append(portate[i]).append("\n\n-------------\n\n");
+                case SECONDI -> secondiMenu.append(portate[i]).append("\n\n-------------\n\n");
+                case DESSERT -> dessertMenu.append(portate[i]).append("\n\n-------------\n\n");
+                case BEVANDE -> bevandeMenu.append(portate[i]).append("\n\n-------------\n\n");
+            }
+        }
+
+        StringBuilder menu = new StringBuilder("\n-------------- MENÙ --------------\n\n")
+                .append(antipastiMenu)
+                .append(primiMenu)
+                .append(secondiMenu)
+                .append(dessertMenu)
+                .append(bevandeMenu);
+
+        return menu.toString();
     }
 }
