@@ -6,6 +6,8 @@ public class Menu {
     //Aggiungere qui gli altri attributi di questa classe per ciascuna portata
 
 
+    private Portata[] portate = new Portata[50];
+    private int numberOfPortate;
 
     private Dessert[] dessertMenu = new Dessert[10];
     private int numberOfDessert;
@@ -22,6 +24,15 @@ public class Menu {
     private Primi[] primiMenu = new Primi[10];
     private int numberOfPrimi;
 
+
+    public void addPortata(Portata portata){
+        if(numberOfPortate < 50){
+            portate[numberOfPortate] = portata;
+            numberOfPortate++;
+        }else{
+            System.out.println("Errore: numero massimo di portate raggiunto!");
+        }
+    }
 
     //Funzione che aggiunge portate al menù dei dessert
     public void addDessert(Dessert dessert) {
