@@ -8,9 +8,6 @@ public class Menu {
         this.portate = new Portata[capacità];
     }
 
-    //Da eliminare
-    private Antipasti[] antipastiMenu = new Antipasti[10];
-    private int numberOfAntipasti;
 
     //Funzione che aggiunge portate all'array delle portate
     public void addPortata(Portata portata){
@@ -19,17 +16,6 @@ public class Menu {
             numberOfPortate++;
         }else{
             System.out.println("Errore: numero massimo di portate raggiunto!");
-        }
-    }
-
-    //Da eliminare
-    public void addAntipasti(Antipasti antipasti) {
-        if (numberOfAntipasti < 10) {
-            antipastiMenu[numberOfAntipasti] = antipasti;
-            numberOfAntipasti++;
-        } else {
-            System.out.println("Errore: numero massimo di antipasti raggiunto!");
-
         }
     }
 
