@@ -1,6 +1,7 @@
 public enum Temperatura {
     CALDO("Caldo"),
-    FREDDO("Freddo");
+    FREDDO("Freddo"),
+    TIEPIDO("Tiepido");
 
     private final String valore;
 
