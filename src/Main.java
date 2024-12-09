@@ -126,11 +126,28 @@ public class Main {
                 Temperatura.CALDO));
 
  
-        menu.addAntipasti(new Antipasti(
+        menu.addPortata(new Antipasti(
                 "Bruschetta al pomodoro",
                 "Pane tostato condito con pomodori freschi, olio d'oliva e basilico.",
                 5.50,
                 new String[]{"Pane", "Pomodori", "Olio d'oliva", "Basilico", "Aglio"}
+                , true
+        ));
+
+        menu.addPortata(new Antipasti(
+                "Vitello Tonnato",
+                "Fettine di vitello condite con salsa tonnata a base di maionese, tonno e capperi.",
+                8.00,
+                new String[]{"Vitello", "Maionese", "Tonno", "Capperi"},
+                false
+        ));
+
+        menu.addPortata(new Antipasti(
+                "Flan di Spinaci",
+                "Soufflé di spinaci accompagnato da una salsa al formaggio.",
+                7.50,
+                new String[]{"Spinaci", "Uova", "Panna", "Formaggio", "Burro"},
+                true
         ));
 
         menu.addBevande(new Bevande("Birra", "bevanda alcolica", 3.5, new String[]{"acqua" , "luppolo", "malto"}));

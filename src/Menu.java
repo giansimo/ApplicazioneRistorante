@@ -9,10 +9,6 @@ public class Menu {
     }
 
     //Da eliminare
-    private Antipasti[] antipastiMenu = new Antipasti[10];
-    private int numberOfAntipasti;
-
-    //Da eliminare
     private Bevande[] bevandeMenu = new Bevande[10];
     private int numberOfBevande;
 
@@ -23,17 +19,6 @@ public class Menu {
             numberOfPortate++;
         }else{
             System.out.println("Errore: numero massimo di portate raggiunto!");
-        }
-    }
-
-    //Da eliminare
-    public void addAntipasti(Antipasti antipasti) {
-        if (numberOfAntipasti < 10) {
-            antipastiMenu[numberOfAntipasti] = antipasti;
-            numberOfAntipasti++;
-        } else {
-            System.out.println("Errore: numero massimo di antipasti raggiunto!");
-
         }
     }
   
