@@ -12,10 +12,6 @@ public class Menu {
     private Antipasti[] antipastiMenu = new Antipasti[10];
     private int numberOfAntipasti;
 
-    //Da eliminare
-    private Bevande[] bevandeMenu = new Bevande[10];
-    private int numberOfBevande;
-
     //Funzione che aggiunge portate all'array delle portate
     public void addPortata(Portata portata){
         if(numberOfPortate < 50){
@@ -36,17 +32,7 @@ public class Menu {
 
         }
     }
-  
-    //Da eliminare
-    public void addBevande(Bevande bevanda) {
-        if (numberOfBevande < 10) {
-            bevandeMenu[numberOfBevande] = bevanda;
-            numberOfBevande++;
-        } else {
-            System.out.println("Errore: numero massimo di bevande raggiunto!");
 
-        }
-    }
 
     @Override
     public String toString() {
