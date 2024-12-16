@@ -5,7 +5,7 @@ public class Primi extends Portata{
 
     //Costruttore
     public Primi(String nome, String descrizione, int prezzo, String[] ingredienti, String tipoDiCottura){
-        super(TipologiaPortata.PRIMI, nome, descrizione, prezzo, ingredienti);
+        super(nome, descrizione, prezzo, ingredienti);
         this.tipoDiCottura = tipoDiCottura;
     }
 
@@ -19,7 +19,12 @@ public class Primi extends Portata{
     }
 
     @Override
-    protected String elementiNonComuni() {
+    public String getTipologiaPortata() {
+        return "PRIMI";
+    }
+
+    @Override
+    protected String getAttributiNonComuni() {
         return "Tipo di cottura: "+ tipoDiCottura+ "\n";
     }
 }
