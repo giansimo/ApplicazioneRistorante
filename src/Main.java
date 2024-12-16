@@ -4,6 +4,50 @@ public class Main {
         //Istanziamento del Menù
         Menu menu = new Menu();
 
+
+        menu.addPortata(new Antipasti(
+                "Bruschetta al pomodoro",
+                "Pane tostato condito con pomodori freschi, olio d'oliva e basilico.",
+                5.50,
+                new String[]{"Pane", "Pomodori", "Olio d'oliva", "Basilico", "Aglio"}
+                , true
+        ));
+
+        menu.addPortata(new Antipasti(
+                "Vitello Tonnato",
+                "Fettine di vitello condite con salsa tonnata a base di maionese, tonno e capperi.",
+                8.00,
+                new String[]{"Vitello", "Maionese", "Tonno", "Capperi"},
+                false
+        ));
+
+        menu.addPortata(new Antipasti(
+                "Flan di Spinaci",
+                "Soufflé di spinaci accompagnato da una salsa al formaggio.",
+                7.50,
+                new String[]{"Spinaci", "Uova", "Panna", "Formaggio", "Burro"},
+                true
+        ));
+
+        //Aggiunta di Primi nel Menù
+        menu.addPortata(new Primi("Risotto al Tartufo Nero con Fonduta di Parmigiano Reggiano",
+                "Un risotto cremoso preparato con brodo vegetale,"+
+                        "arricchito dal profumo inconfondibile del tartufo nero e completato con una fonduta di Parmigiano Reggiano."+
+                        "Il contrasto tra la ricchezza del formaggio e l'aroma terroso del tartufo crea un piatto sofisticato e avvolgente.",
+                13,
+                new String[] {
+                        "Riso Carnaroli",
+                        "Brodo vegetale",
+                        "tartufo nero fresco",
+                        "Parmigiano Reggiano",
+                        "burro",
+                        "vino bianco",
+                        "cipolla."},
+
+                "Cottura Passiva, Cottura Espressa, Doppia Cottura, Cottura Risottata"
+
+        ));
+
         //Aggiunta dei secondi
         menu.addPortata(new Secondi("Bistecca di Manzo alla Griglia",
                 """
@@ -55,24 +99,7 @@ public class Main {
                         "erbe aromatiche (come rosmarino o timo)"},
                 "media"));
 
-        //Aggiunta di Primi nel Menù
-        menu.addPortata(new Primi("Risotto al Tartufo Nero con Fonduta di Parmigiano Reggiano",
-                "Un risotto cremoso preparato con brodo vegetale,"+
-                        "arricchito dal profumo inconfondibile del tartufo nero e completato con una fonduta di Parmigiano Reggiano."+
-                        "Il contrasto tra la ricchezza del formaggio e l'aroma terroso del tartufo crea un piatto sofisticato e avvolgente.",
-                13,
-                new String[] {
-                         "Riso Carnaroli",
-                         "Brodo vegetale",
-                         "tartufo nero fresco",
-                         "Parmigiano Reggiano",
-                         "burro",
-                         "vino bianco",
-                         "cipolla."},
 
-                "Cottura Passiva, Cottura Espressa, Doppia Cottura, Cottura Risottata"
-
-                ));
 
         //Aggiunta di dessert nel Menù
         menu.addPortata(new Dessert("Tiramisù",
@@ -126,29 +153,7 @@ public class Main {
                 Temperatura.CALDO));
 
  
-        menu.addPortata(new Antipasti(
-                "Bruschetta al pomodoro",
-                "Pane tostato condito con pomodori freschi, olio d'oliva e basilico.",
-                5.50,
-                new String[]{"Pane", "Pomodori", "Olio d'oliva", "Basilico", "Aglio"}
-                , true
-        ));
 
-        menu.addPortata(new Antipasti(
-                "Vitello Tonnato",
-                "Fettine di vitello condite con salsa tonnata a base di maionese, tonno e capperi.",
-                8.00,
-                new String[]{"Vitello", "Maionese", "Tonno", "Capperi"},
-                false
-        ));
-
-        menu.addPortata(new Antipasti(
-                "Flan di Spinaci",
-                "Soufflé di spinaci accompagnato da una salsa al formaggio.",
-                7.50,
-                new String[]{"Spinaci", "Uova", "Panna", "Formaggio", "Burro"},
-                true
-        ));
 
         menu.addPortata(new Bevande("Birra", "bevanda alcolica", 3.5, new String[]{"acqua" , "luppolo", "malto"},Temperatura.FREDDO,true));
         menu.addPortata(new Bevande("Coca Cola", "bevanda analcolica", 2.5, new String[]{"acqua" , "zucchero"},Temperatura.FREDDO,false));
