@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
 
         //Istanziamento del Menù
-        Menu menu = new Menu(50);
+        Menu menu = new Menu();
 
         //Aggiunta dei secondi
         menu.addPortata(new Secondi("Bistecca di Manzo alla Griglia",

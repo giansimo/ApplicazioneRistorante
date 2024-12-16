@@ -1,22 +1,27 @@
 public abstract class Portata {
 
-    private TipologiaPortata tipologiaPortata;
     private String nome, descrizione;
     private double prezzo;
     private String[] ingredienti;
 
     public Portata() {}
 
-    public Portata(TipologiaPortata tipologiaPortata, String nome, String descrizione, double prezzo, String[] ingredienti) {
-        this.tipologiaPortata = tipologiaPortata;
+    public Portata(String nome, String descrizione, double prezzo, String[] ingredienti) {
         this.nome = nome;
         this.descrizione = descrizione;
         this.prezzo = prezzo;
         this.ingredienti = ingredienti;
     }
 
-    public TipologiaPortata getTipologiaPortata() {
-        return tipologiaPortata;
+    public abstract String getTipologiaPortata();
+
+    // Funzione che restituisce il titolo della sezione del menù
+    public String getTitleIfNewSection(Portata portataPrecedente) {
+        if (this.getClass() != portataPrecedente.getClass()) {
+            return "\n\n" + getTipologiaPortata() + " -----\n\n";
+        }
+
+        return "";
     }
 
     protected String getNome() {
@@ -43,16 +48,7 @@ public abstract class Portata {
         this.prezzo = prezzo;
     }
 
-    protected String[] getIngredienti() {
-        return ingredienti;
-    }
-
-    protected void setIngredienti(String[] ingredienti) {
-        this.ingredienti = ingredienti;
-    }
-
-    //Funzione che restituisce una stringa contenente l'elenco degli ingredienti dell'istanza
-    private String elencoIngredienti() {
+    protected String getIngredienti() {
         String list = "";
         for (int i = 0; i < ingredienti.length - 1; i++) {
             list += ingredienti[i] + ", ";
@@ -61,15 +57,19 @@ public abstract class Portata {
         return list;
     }
 
+    protected void setIngredienti(String[] ingredienti) {
+        this.ingredienti = ingredienti;
+    }
+
     //Funzione che restituisce i dettagli di ciascuna portata non comuni alle altre portate.
     //La stringa restituita viene stampata nel toString
-    protected abstract String elementiNonComuni();
+    protected abstract String getAttributiNonComuni();
 
     @Override
     public String toString() {
         return nome + ": " + descrizione + "\n\n" +
-                elementiNonComuni() +
-                "Ingredienti: " + elencoIngredienti() + "\n" +
+                getAttributiNonComuni() +
+                "Ingredienti: " + getIngredienti() + "\n" +
                 "Prezzo: " + String.format("%.2f", prezzo) + "€";
     }
 }

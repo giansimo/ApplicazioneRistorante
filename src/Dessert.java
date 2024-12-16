@@ -5,12 +5,17 @@ public class Dessert extends Portata {
     public Dessert() {}
 
     public Dessert(String nome, String descrizione, double prezzo, String[] ingredienti, Temperatura temperatura) {
-        super(TipologiaPortata.DESSERT, nome, descrizione, prezzo, ingredienti);
+        super(nome, descrizione, prezzo, ingredienti);
         this.temperatura = temperatura;
     }
 
     @Override
-    protected String elementiNonComuni() {
+    public String getTipologiaPortata() {
+        return "DESSERT";
+    }
+
+    @Override
+    protected String getAttributiNonComuni() {
         return "Temperatura: " + temperatura.getValore() + "\n";
     }
 }

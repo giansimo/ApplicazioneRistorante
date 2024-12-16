@@ -4,7 +4,7 @@ public class Antipasti extends Portata{
     public Antipasti() {}
 
     public Antipasti(String nome, String descrizione, double prezzo, String[] ingredienti, boolean isVegano) {
-        super(TipologiaPortata.ANTIPASTI, nome, descrizione, prezzo, ingredienti);
+        super(nome, descrizione, prezzo, ingredienti);
         this.isVegano = isVegano;
     }
 
@@ -17,7 +17,12 @@ public class Antipasti extends Portata{
     }
 
     @Override
-    protected String elementiNonComuni() {
+    public String getTipologiaPortata() {
+        return "ANTIPASTI";
+    }
+
+    @Override
+    protected String getAttributiNonComuni() {
         return "Vegano: " + ((isVegano) ? "Si" : "No") + ".\n";
     }
 }

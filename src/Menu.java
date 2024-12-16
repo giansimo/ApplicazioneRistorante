@@ -1,68 +1,39 @@
+import java.util.ArrayList;
+
 //Classe che contiene le istanze delle portate del menù
 public class Menu {
 
-    private Portata[] portate;
-    private int numberOfPortate;
+    private final ArrayList<Portata> portate = new ArrayList<>();
 
-    public Menu(int capacità) {
-        this.portate = new Portata[capacità];
-    }
-
+    public Menu() {}
 
     //Funzione che aggiunge portate all'array delle portate
     public void addPortata(Portata portata){
-        if(numberOfPortate < 50){
-            portate[numberOfPortate] = portata;
-            numberOfPortate++;
-        }else{
-            System.out.println("Errore: numero massimo di portate raggiunto!");
-        }
+        portate.add(portata);
     }
 
 
     @Override
     public String toString() {
 
-        if (numberOfPortate == 0) {
+        if (portate.isEmpty()) {
             return "Il menù è vuoto";
         }
 
-        StringBuilder antipastiMenu = new StringBuilder("\n")
-                .append(TipologiaPortata.ANTIPASTI.getTipologia().toUpperCase())
-                .append(" -----\n\n");
+        StringBuilder menu = new StringBuilder("\n-------------- MENÙ --------------\n\n\n")
+                .append(portate.get(0).getTipologiaPortata())
+                .append(" -----\n\n")
+                .append(portate.get(0))
+                .append("\n\n-------------\n\n");
 
-        StringBuilder primiMenu = new StringBuilder("\n")
-                .append(TipologiaPortata.PRIMI.getTipologia().toUpperCase())
-                .append(" -----\n\n");
+        for (int i = 1; i < portate.size(); i++) {
 
-        StringBuilder secondiMenu = new StringBuilder("\n")
-                .append(TipologiaPortata.SECONDI.getTipologia().toUpperCase())
-                .append(" -----\n\n");
+            menu
+                    .append(portate.get(i).getTitleIfNewSection(portate.get(i - 1)))
+                    .append(portate.get(i))
+                    .append("\n\n-------------\n\n");
 
-        StringBuilder dessertMenu = new StringBuilder("\n")
-                .append(TipologiaPortata.DESSERT.getTipologia().toUpperCase())
-                .append(" -----\n\n");
-
-        StringBuilder bevandeMenu = new StringBuilder("\n")
-                .append(TipologiaPortata.BEVANDE.getTipologia().toUpperCase())
-                .append(" -----\n\n");
-
-        for (int i = 0; i < numberOfPortate; i++) {
-            switch (portate[i].getTipologiaPortata()) {
-                case ANTIPASTI -> antipastiMenu.append(portate[i]).append("\n\n-------------\n\n");
-                case PRIMI -> primiMenu.append(portate[i]).append("\n\n-------------\n\n");
-                case SECONDI -> secondiMenu.append(portate[i]).append("\n\n-------------\n\n");
-                case DESSERT -> dessertMenu.append(portate[i]).append("\n\n-------------\n\n");
-                case BEVANDE -> bevandeMenu.append(portate[i]).append("\n\n-------------\n\n");
-            }
         }
-
-        StringBuilder menu = new StringBuilder("\n-------------- MENÙ --------------\n\n")
-                .append(antipastiMenu)
-                .append(primiMenu)
-                .append(secondiMenu)
-                .append(dessertMenu)
-                .append(bevandeMenu);
 
         return menu.toString();
     }
