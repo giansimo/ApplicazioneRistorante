@@ -27,5 +27,11 @@ public class Primi extends Portata{
     protected String getAttributiNonComuni() {
         return "Tipo di cottura: "+ tipoDiCottura+ "\n";
     }
+
+    @Override
+    public String getColor() {
+        return "\u001B[33m";
+    }
+
 }
 

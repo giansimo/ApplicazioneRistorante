@@ -34,5 +34,12 @@ public class Bevande extends Portata{
     protected String getAttributiNonComuni() {
         return "Temperatura: " + temperatura.getValore() + "\nAlcolico: " + (alcolico ? "alcolico": "non alcolico") + "\n";
     }
+
+    @Override
+    public String getColor() {
+        return "\u001B[35m";
+    }
+
+
 }
 

@@ -67,9 +67,13 @@ public abstract class Portata {
 
     @Override
     public String toString() {
-        return nome + ": " + descrizione + "\n\n" +
+        return getColor() + nome + ": " + descrizione + "\n\n" +
                 getAttributiNonComuni() +
                 "Ingredienti: " + getIngredienti() + "\n" +
-                "Prezzo: " + String.format("%.2f", prezzo) + "€";
+                "Prezzo: " + String.format("%.2f", prezzo) + "€\u001B[0m";
     }
+
+    public abstract String getColor();
+
+
 }

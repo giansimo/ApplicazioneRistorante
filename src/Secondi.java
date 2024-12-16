@@ -35,4 +35,9 @@ public class Secondi extends Portata{
     protected String getAttributiNonComuni() {
         return "Cottura: "+ cottura + "\n"+ "Categoria Alimentazione: "+ categoriaAlimentazione+ "\n";
     }
+
+    @Override
+    public String getColor() {
+        return "\u001B[32m";
+    }
 }

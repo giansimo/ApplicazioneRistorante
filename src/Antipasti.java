@@ -25,5 +25,11 @@ public class Antipasti extends Portata{
     protected String getAttributiNonComuni() {
         return "Vegano: " + ((isVegano) ? "Si" : "No") + ".\n";
     }
+
+    @Override
+    public String getColor() {
+        return "\u001B[31m";
+    }
+
 }
 

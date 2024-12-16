@@ -18,5 +18,11 @@ public class Dessert extends Portata {
     protected String getAttributiNonComuni() {
         return "Temperatura: " + temperatura.getValore() + "\n";
     }
+
+    @Override
+    public String getColor() {
+        return "\u001B[36m";
+    }
+
 }
 
