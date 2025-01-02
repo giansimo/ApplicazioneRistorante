@@ -1,16 +1,19 @@
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Secondi extends Portata{
 
     private String cottura;
     private String categoriaAlimentazione;
 
-    public Secondi (String nome,String descrizione,double prezzo,String[] ingredienti ,String cottura,String categoriaAlimentazione){
-        super(nome, descrizione, prezzo, ingredienti);
-        this.cottura = cottura;
-        this.categoriaAlimentazione = categoriaAlimentazione;
-
-    }
-
-    public Secondi (String nome,String descrizione,double prezzo,String[] ingredienti ,String cottura){
+    @JsonCreator
+    public Secondi (
+            @JsonProperty("nome") String nome,
+            @JsonProperty("descrizione") String descrizione,
+            @JsonProperty("prezzo") double prezzo,
+            @JsonProperty("ingredienti") String[] ingredienti,
+            @JsonProperty("cottura") String cottura,
+            @JsonProperty("categoriaAlimentazione") String categoriaAlimentazione){
         super(nome, descrizione,prezzo,ingredienti);
         this.cottura = cottura;
         this.categoriaAlimentazione = "Nessuna Categoria";

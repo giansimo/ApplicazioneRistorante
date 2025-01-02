@@ -1,12 +1,21 @@
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Bevande extends Portata{
 
     private Temperatura temperatura;
     private boolean alcolico;
 
-    public Bevande(String nome,String descrzione,double prezzo,String[]ingredienti,Temperatura temperatura, boolean alcolico){
-        super(nome,descrzione,prezzo,ingredienti);
+    @JsonCreator
+    public Bevande(@JsonProperty("nome") String nome,
+                   @JsonProperty("descrizione") String descrizione,
+                   @JsonProperty("prezzo") double prezzo,
+                   @JsonProperty("ingredienti") String[] ingredienti,
+                   @JsonProperty("temperatura") Temperatura temperatura,
+                   @JsonProperty("alcolica") boolean alcolico){
+        super(nome,descrizione,prezzo,ingredienti);
         this.temperatura = temperatura;
-        this.alcolico    = alcolico;
+        this.alcolico = alcolico;
     }
 
     public boolean isAlcolico() {

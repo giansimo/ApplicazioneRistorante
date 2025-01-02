@@ -1,9 +1,18 @@
-public class Antipasti extends Portata{
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class Antipasti extends Portata {
     private boolean isVegano;
 
     public Antipasti() {}
 
-    public Antipasti(String nome, String descrizione, double prezzo, String[] ingredienti, boolean isVegano) {
+    @JsonCreator
+    public Antipasti(
+            @JsonProperty("nome") String nome,
+            @JsonProperty("descrizione") String descrizione,
+            @JsonProperty("prezzo") double prezzo,
+            @JsonProperty("ingredienti") String[] ingredienti,
+            @JsonProperty("isVegano") boolean isVegano) {
         super(nome, descrizione, prezzo, ingredienti);
         this.isVegano = isVegano;
     }

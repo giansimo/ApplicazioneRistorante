@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
+import java.util.List;
 
 //Classe che contiene le istanze delle portate del menù
 public class Menu {
@@ -8,10 +10,16 @@ public class Menu {
 
     public Menu() {}
 
-    //Funzione che aggiunge portate all'array delle portate
+    //Funzione che aggiunge una portata all'array delle portate
     public void addPortata(Portata portata){
         portate.add(portata);
         portate.sort(Comparator.comparing(Portata::getTipologiaPortata));
+    }
+
+    //Funzione che aggiunge una collezione di portate all'array delle portate
+    public void addAllPortate(Collection<Portata> portate){
+        this.portate.addAll(portate);
+        this.portate.sort(Comparator.comparing(Portata::getTipologiaPortata));
     }
 
 
