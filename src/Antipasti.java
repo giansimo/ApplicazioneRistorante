@@ -17,8 +17,8 @@ public class Antipasti extends Portata{
     }
 
     @Override
-    public String getTipologiaPortata() {
-        return "ANTIPASTI";
+    public TipologiaPortata getTipologiaPortata() {
+        return TipologiaPortata.ANTIPASTI;
     }
 
     @Override

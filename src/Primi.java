@@ -19,8 +19,8 @@ public class Primi extends Portata{
     }
 
     @Override
-    public String getTipologiaPortata() {
-        return "PRIMI";
+    public TipologiaPortata getTipologiaPortata() {
+        return TipologiaPortata.PRIMI;
     }
 
     @Override
