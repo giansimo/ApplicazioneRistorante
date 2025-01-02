@@ -1,5 +1,20 @@
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "tipo")
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Antipasti.class, name = "Antipasti"),
+        @JsonSubTypes.Type(value = Bevande.class, name = "Bevande"),
+        @JsonSubTypes.Type(value = Dessert.class, name = "Dessert"),
+        @JsonSubTypes.Type(value = Primi.class, name = "Primi"),
+        @JsonSubTypes.Type(value = Secondi.class, name = "Secondi")
+})
 public abstract class Portata {
 
+    protected String tipo;
     private String nome, descrizione;
     private double prezzo;
     private String[] ingredienti;

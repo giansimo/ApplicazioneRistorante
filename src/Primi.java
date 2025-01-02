@@ -1,10 +1,18 @@
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Primi extends Portata{
 
     //Attributi
     private String tipoDiCottura;
 
-    //Costruttore
-    public Primi(String nome, String descrizione, int prezzo, String[] ingredienti, String tipoDiCottura){
+    @JsonCreator
+    public Primi(
+            @JsonProperty("nome") String nome,
+            @JsonProperty("descrizione") String descrizione,
+            @JsonProperty("prezzo") double prezzo,
+            @JsonProperty("ingredienti") String[] ingredienti,
+            @JsonProperty("cottura") String tipoDiCottura){
         super(nome, descrizione, prezzo, ingredienti);
         this.tipoDiCottura = tipoDiCottura;
     }
