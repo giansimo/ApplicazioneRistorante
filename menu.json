@@ -1,5 +1,4 @@
-{
-    "menu": [
+ [
         {
             "tipo": "Antipasti",
             "nome": "Bruschetta al pomodoro",
@@ -140,4 +139,3 @@
             "alcolica": false
         }
     ]
-}
