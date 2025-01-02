@@ -1,0 +1,143 @@
+{
+    "menu": [
+        {
+            "tipo": "Antipasti",
+            "nome": "Bruschetta al pomodoro",
+            "descrizione": "Pane tostato condito con pomodori freschi, olio d'oliva e basilico.",
+            "prezzo": 5.5,
+            "ingredienti": [
+                "Pane",
+                "Pomodori",
+                "Olio d'oliva",
+                "Basilico",
+                "Aglio"
+            ],
+            "vegetariano": true
+        },
+        {
+            "tipo": "Antipasti",
+            "nome": "Vitello Tonnato",
+            "descrizione": "Fettine di vitello condite con salsa tonnata a base di maionese, tonno e capperi.",
+            "prezzo": 8.0,
+            "ingredienti": [
+                "Vitello",
+                "Maionese",
+                "Tonno",
+                "Capperi"
+            ],
+            "vegetariano": false
+        },
+        {
+            "tipo": "Bevande",
+            "nome": "Birra",
+            "descrizione": "bevanda alcolica",
+            "prezzo": 3.5,
+            "ingredienti": [
+                "acqua",
+                "luppolo",
+                "malto"
+            ],
+            "temperatura": "FREDDO",
+            "alcolica": true
+        },
+        {
+            "tipo": "Antipasti",
+            "nome": "Flan di Spinaci",
+            "descrizione": "Soufflé di spinaci accompagnato da una salsa al formaggio.",
+            "prezzo": 7.5,
+            "ingredienti": [
+                "Spinaci",
+                "Uova",
+                "Panna",
+                "Formaggio",
+                "Burro"
+            ],
+            "vegetariano": true
+        },
+        {
+            "tipo": "Primi",
+            "nome": "Risotto al Tartufo Nero con Fonduta di Parmigiano Reggiano",
+            "descrizione": "Un risotto cremoso preparato con brodo vegetale, arricchito dal profumo inconfondibile del tartufo nero e completato con una fonduta di Parmigiano Reggiano.",
+            "prezzo": 13.0,
+            "ingredienti": [
+                "Riso Carnaroli",
+                "Brodo vegetale",
+                "tartufo nero fresco",
+                "Parmigiano Reggiano",
+                "burro",
+                "vino bianco",
+                "cipolla"
+            ],
+            "cottura": "Cottura Passiva, Cottura Espressa, Doppia Cottura, Cottura Risottata"
+        },
+        {
+            "tipo": "Secondi",
+            "nome": "Bistecca di Manzo alla Griglia",
+            "descrizione": "Una succulenta bistecca di manzo, cotta alla perfezione sulla griglia. La carne è tenera, saporita e leggermente croccante all’esterno, mantenendo tutta la sua morbidezza all’interno.",
+            "prezzo": 18.0,
+            "ingredienti": [
+                "preferibilmente taglio come fiorentina, controfiletto o entrecôte)",
+                "olio extravergine di oliva",
+                "sale",
+                "pepe nero",
+                "rosmarino (opzionale)"
+            ],
+            "cottura": "media"
+        },
+        {
+            "tipo": "Dessert",
+            "nome": "Soufflé al cioccolato",
+            "descrizione": "Un dessert caldo e voluttuoso, il soufflé al cioccolato è una delle preparazioni più amate dai golosi. Il suo cuore morbido e fondente si scioglie in bocca, regalando un’esperienza intensa e soddisfacente.",
+            "prezzo": 8.0,
+            "ingredienti": [
+                "Cioccolato fondente",
+                "Burro",
+                "Uova",
+                "Zucchero",
+                "Farina",
+                "Panna",
+                "Vaniglia"
+            ],
+            "temperatura": "CALDO"
+        },
+        {
+            "tipo": "Dessert",
+            "nome": "Tiramisù",
+            "descrizione": "Un classico dessert italiano, cremoso e ricco di sapori. Composto da strati di savoiardi imbevuti nel caffè e ricoperti con una soffice crema al mascarpone, il tutto spolverato con cacao amaro.",
+            "prezzo": 6.5,
+            "ingredienti": [
+                "Savoiardi",
+                "Mascarpone",
+                "Uova",
+                "Zucchero",
+                "Caffé espresso",
+                "Cacao amaro",
+                "Liquore Marsala"
+            ],
+            "temperatura": "FREDDO"
+        },
+        {
+            "tipo": "Bevande",
+            "nome": "Coca Cola",
+            "descrizione": "bevanda analcolica",
+            "prezzo": 2.5,
+            "ingredienti": [
+                "acqua",
+                "zucchero"
+            ],
+            "temperatura": "FREDDO",
+            "alcolica": false
+        },
+        {
+            "tipo": "Bevande",
+            "nome": "Acqua",
+            "descrizione": "bevanda analcolica",
+            "prezzo": 1.5,
+            "ingredienti": [
+                "acqua"
+            ],
+            "temperatura": "TIEPIDO",
+            "alcolica": false
+        }
+    ]
+}
