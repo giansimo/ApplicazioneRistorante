@@ -13,12 +13,12 @@ public abstract class Portata {
         this.ingredienti = ingredienti;
     }
 
-    public abstract String getTipologiaPortata();
+    public abstract TipologiaPortata getTipologiaPortata();
 
     // Funzione che restituisce il titolo della sezione del menù
     public String getTitleIfNewSection(Portata portataPrecedente) {
         if (this.getClass() != portataPrecedente.getClass()) {
-            return "\n\n" + getTipologiaPortata() + " -----\n\n";
+            return "\n\n" + getTipologiaPortata().getValue() + " -----\n\n";
         }
 
         return "";

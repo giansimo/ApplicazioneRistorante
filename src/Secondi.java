@@ -27,8 +27,8 @@ public class Secondi extends Portata{
 
 
     @Override
-    public String getTipologiaPortata() {
-        return "SECONDI";
+    public TipologiaPortata getTipologiaPortata() {
+        return TipologiaPortata.SECONDI;
     }
 
     @Override

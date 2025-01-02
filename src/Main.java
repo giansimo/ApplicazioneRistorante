@@ -20,6 +20,7 @@ public class Main {
                 new String[]{"Vitello", "Maionese", "Tonno", "Capperi"},
                 false
         ));
+        menu.addPortata(new Bevande("Birra", "bevanda alcolica", 3.5, new String[]{"acqua" , "luppolo", "malto"},Temperatura.FREDDO,true));
 
         menu.addPortata(new Antipasti(
                 "Flan di Spinaci",
@@ -67,6 +68,24 @@ public class Main {
                                 "Bistecca di vitello", "olio extravergine di oliva","sale","pepe nero",
                                 "rosmarino (opzionale)","limone (opzionale)"},
                         "media"));
+
+        menu.addPortata(new Dessert("Soufflé al cioccolato",
+                """
+                        Un dessert caldo e voluttuoso, il soufflé al cioccolato è una delle preparazioni
+                        più amate dai golosi. Il suo cuore morbido e fondente si scioglie in bocca,
+                        regalando un’esperienza intensa e soddisfacente.
+                        Viene servito appena uscito dal forno, per mantenere la sua consistenza soffice.""",
+                8,
+                new String[] {
+                        "Cioccolato fondente",
+                        "Burro",
+                        "Uova",
+                        "Zucchero",
+                        "Farina",
+                        "Panna",
+                        "Vaniglia"
+                },
+                Temperatura.CALDO));
 
         menu.addPortata(new Secondi ("Arrosticini di Pecora",
                 """
@@ -119,23 +138,7 @@ public class Main {
                         "Liquore Marsala"
                 },
                 Temperatura.FREDDO));
-        menu.addPortata(new Dessert("Soufflé al cioccolato",
-                """
-                        Un dessert caldo e voluttuoso, il soufflé al cioccolato è una delle preparazioni
-                        più amate dai golosi. Il suo cuore morbido e fondente si scioglie in bocca,
-                        regalando un’esperienza intensa e soddisfacente.
-                        Viene servito appena uscito dal forno, per mantenere la sua consistenza soffice.""",
-                8,
-                new String[] {
-                        "Cioccolato fondente",
-                        "Burro",
-                        "Uova",
-                        "Zucchero",
-                        "Farina",
-                        "Panna",
-                        "Vaniglia"
-                },
-                Temperatura.CALDO));
+
 
         menu.addPortata(new Dessert("Crème Brulée",
                 """
@@ -152,10 +155,7 @@ public class Main {
                 },
                 Temperatura.CALDO));
 
- 
 
-
-        menu.addPortata(new Bevande("Birra", "bevanda alcolica", 3.5, new String[]{"acqua" , "luppolo", "malto"},Temperatura.FREDDO,true));
         menu.addPortata(new Bevande("Coca Cola", "bevanda analcolica", 2.5, new String[]{"acqua" , "zucchero"},Temperatura.FREDDO,false));
         menu.addPortata(new Bevande("Acqua", "bevanda analcolica", 1.5, new String[]{"acqua"},Temperatura.TIEPIDO,false));
 

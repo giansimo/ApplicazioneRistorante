@@ -10,8 +10,8 @@ public class Dessert extends Portata {
     }
 
     @Override
-    public String getTipologiaPortata() {
-        return "DESSERT";
+    public TipologiaPortata getTipologiaPortata() {
+        return TipologiaPortata.DESSERT;
     }
 
     @Override

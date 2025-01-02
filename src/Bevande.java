@@ -26,8 +26,8 @@ public class Bevande extends Portata{
     }
 
     @Override
-    public String getTipologiaPortata() {
-        return "BEVANDE";
+    public TipologiaPortata getTipologiaPortata() {
+        return TipologiaPortata.BEVANDE;
     }
 
     @Override
