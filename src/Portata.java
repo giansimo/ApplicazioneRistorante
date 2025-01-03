@@ -3,7 +3,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
-        include = JsonTypeInfo.As.PROPERTY,
         property = "tipo")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Antipasti.class, name = "Antipasti"),
@@ -14,7 +13,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 })
 public abstract class Portata {
 
-    protected String tipo;
     private String nome, descrizione;
     private double prezzo;
     private String[] ingredienti;
