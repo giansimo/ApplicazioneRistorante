@@ -1,4 +1,5 @@
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Antipasti extends Portata {
@@ -17,6 +18,7 @@ public class Antipasti extends Portata {
         this.isVegano = isVegano;
     }
 
+    @JsonProperty("isVegano")
     public boolean isVegano() {
         return isVegano;
     }

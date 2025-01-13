@@ -18,6 +18,11 @@ public class Dessert extends Portata {
         this.temperatura = temperatura;
     }
 
+    @JsonProperty("temperatura")
+    public Temperatura getTemperatura() {
+        return temperatura;
+    }
+
     @Override
     public TipologiaPortata getTipologiaPortata() {
         return TipologiaPortata.DESSERT;

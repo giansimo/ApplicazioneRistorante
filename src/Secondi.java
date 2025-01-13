@@ -20,10 +20,12 @@ public class Secondi extends Portata{
 
     }
 
+    @JsonProperty("cottura")
     public String getCottura() {return cottura;}
 
     public void setCottura(String cottura) {this.cottura = cottura;}
 
+    @JsonProperty("categoriaAlimentazione")
     public String getCategoriaAlimentazione() {return categoriaAlimentazione;}
 
     public void setCategoriaAlimentazione(String categoriaAlimentazione) {this.categoriaAlimentazione = categoriaAlimentazione;}
