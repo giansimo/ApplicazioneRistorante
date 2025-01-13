@@ -1,3 +1,5 @@
+//Questo enum serve per dare un ordine alle portate nel menu
+
 public enum TipologiaPortata {
     ANTIPASTI("ANTIPASTI"),
     PRIMI("PRIMI"),

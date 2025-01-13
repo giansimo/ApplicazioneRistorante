@@ -12,22 +12,24 @@ public class Bevande extends Portata{
                    @JsonProperty("prezzo") double prezzo,
                    @JsonProperty("ingredienti") String[] ingredienti,
                    @JsonProperty("temperatura") Temperatura temperatura,
-                   @JsonProperty("alcolica") boolean alcolico){
+                   @JsonProperty("alcolico") boolean alcolico){
         super(nome,descrizione,prezzo,ingredienti);
         this.temperatura = temperatura;
         this.alcolico = alcolico;
     }
 
-    public boolean isAlcolico() {
+    @JsonProperty("alcolico")
+    public boolean isAlcolica() {
         return alcolico;
     }
 
-    public void setAlcolico(boolean alcolico) {
-        this.alcolico = alcolico;
-    }
-
+    @JsonProperty("temperatura")
     public Temperatura getTemperatura() {
         return temperatura;
+    }
+
+    public void setAlcolica(boolean alcolica) {
+        this.alcolico = alcolica;
     }
 
     public void setTemperatura(Temperatura temperatura) {

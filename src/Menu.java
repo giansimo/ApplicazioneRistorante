@@ -1,3 +1,9 @@
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
@@ -20,6 +26,13 @@ public class Menu {
     public void addAllPortate(Collection<Portata> portate){
         this.portate.addAll(portate);
         this.portate.sort(Comparator.comparing(Portata::getTipologiaPortata));
+    }
+
+    //Funzione che salva il menù su un file JSON (sovrascrivendone il contenuto)
+    public void saveOnFile(String path) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+        objectMapper.writerFor(new TypeReference<List<Portata>>() {}).writeValue(new File(path), portate);
     }
 
 

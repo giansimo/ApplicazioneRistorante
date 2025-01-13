@@ -12,12 +12,13 @@ public class Primi extends Portata{
             @JsonProperty("descrizione") String descrizione,
             @JsonProperty("prezzo") double prezzo,
             @JsonProperty("ingredienti") String[] ingredienti,
-            @JsonProperty("cottura") String tipoDiCottura){
+            @JsonProperty("tipoDiCottura") String tipoDiCottura){
         super(nome, descrizione, prezzo, ingredienti);
         this.tipoDiCottura = tipoDiCottura;
     }
 
-        // Setter and Getter
+    // Setter and Getter
+    @JsonProperty("tipoDiCottura")
     public String getTipoDiCottura() {
         return tipoDiCottura;
     }
