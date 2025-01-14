@@ -35,6 +35,21 @@ public class Menu {
         objectMapper.writerFor(new TypeReference<List<Portata>>() {}).writeValue(new File(path), portate);
     }
 
+    //Da fare (vedi Trello)
+    public void deletePortata(String name) {
+        System.out.println("Funzione da sviluppare");
+    }
+
+    //Da fare (vedi Trello)
+    public void downloadFromFile(String path) throws IOException {
+        System.out.println("Funzione da sviluppare");
+    }
+
+    //Da fare (vedi Trello)
+    public void print() {
+        System.out.println("Funzione da sviluppare");
+    }
+
 
     @Override
     public String toString() {
