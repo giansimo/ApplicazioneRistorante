@@ -42,7 +42,9 @@ public class Menu {
 
     //Da fare (vedi Trello)
     public void downloadFromFile(String path) throws IOException {
-        System.out.println("Funzione da sviluppare");
+        ObjectMapper objectMapper = new ObjectMapper();
+        File jsonFile = new File(path);
+        addAllPortate(objectMapper.readValue(jsonFile, new TypeReference<>() {}));
     }
 
     //Da fare (vedi Trello)
