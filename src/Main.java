@@ -1,3 +1,16 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.Array;
+
+import netscape.javascript.JSObject;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.JsonArray;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -161,6 +174,6 @@ public class Main {
 
 
         //Stampa del Menù
-        System.out.println(menu);
+        //System.out.println(menu);
     }
 }
