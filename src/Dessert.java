@@ -1,12 +1,26 @@
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Dessert extends Portata {
 
     private Temperatura temperatura;
 
     public Dessert() {}
 
-    public Dessert(String nome, String descrizione, double prezzo, String[] ingredienti, Temperatura temperatura) {
+    @JsonCreator
+    public Dessert(
+            @JsonProperty("nome") String nome,
+            @JsonProperty("descrizione") String descrizione,
+            @JsonProperty("prezzo") double prezzo,
+            @JsonProperty("ingredienti") String[] ingredienti,
+            @JsonProperty("temperatura") Temperatura temperatura) {
         super(nome, descrizione, prezzo, ingredienti);
         this.temperatura = temperatura;
+    }
+
+    @JsonProperty("temperatura")
+    public Temperatura getTemperatura() {
+        return temperatura;
     }
 
     @Override
