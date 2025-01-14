@@ -4,10 +4,12 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
+import java.util.regex.Pattern;
 
 //Classe che contiene le istanze delle portate del menù
 public class Menu {
@@ -36,8 +38,11 @@ public class Menu {
     }
 
     //Da fare (vedi Trello)
-    public void deletePortata(String name) {
-        System.out.println("Funzione da sviluppare");
+    public void deletePortata(String name) throws IllegalArgumentException {
+        boolean found = portate.removeIf(portata -> portata.getNome().equalsIgnoreCase(name));
+        if (!found) {
+            throw new IllegalArgumentException("Nessuna portata trovata con il nome \"" + name + "\".");
+        }
     }
 
     //Da fare (vedi Trello)
@@ -47,7 +52,7 @@ public class Menu {
 
     //Da fare (vedi Trello)
     public void print() {
-        System.out.println("Funzione da sviluppare");
+        System.out.println(this);
     }
 
 
