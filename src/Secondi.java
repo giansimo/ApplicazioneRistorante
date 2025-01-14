@@ -16,7 +16,7 @@ public class Secondi extends Portata{
             @JsonProperty("categoriaAlimentazione") String categoriaAlimentazione){
         super(nome, descrizione,prezzo,ingredienti);
         this.cottura = cottura;
-        this.categoriaAlimentazione = "Nessuna Categoria";
+        this.categoriaAlimentazione = categoriaAlimentazione;
 
     }
 
