@@ -72,4 +72,12 @@
   "ingredienti" : [ "acqua" ],
   "temperatura" : "TIEPIDO",
   "alcolico" : false
+}, {
+  "tipo" : "Bevande",
+  "nome" : "Aranciata",
+  "descrizione" : "succo di arancia",
+  "prezzo" : 2.5,
+  "ingredienti" : [ "succodiarancia", "acqua", "zucchero" ],
+  "temperatura" : "FREDDO",
+  "alcolico" : false
 } ]
