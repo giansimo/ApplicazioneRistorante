@@ -4,12 +4,10 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
-import java.util.regex.Pattern;
 
 //Classe che contiene le istanze delle portate del menù
 public class Menu {
